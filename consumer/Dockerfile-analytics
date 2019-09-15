@@ -48,5 +48,6 @@ WORKDIR /usr/bin/app
 
 ENTRYPOINT /usr/local/spark/bin/spark-submit \
 		--class "com.renarde.wikiflow.consumer.AnalyticsConsumer" \
+		--driver-memory 5g \
 		--master "local[2]" \
 		consumer-1.0-SNAPSHOT-jar-with-dependencies.jar
