@@ -85,7 +85,7 @@ object AnalyticsConsumer extends App with LazyLogging {
     .filter($"json_wiki.bot" =!= true)
 //    .withWatermark("timestamp", "10 minutes")
 //  .withWatermark("timestamp", "3 hours")
-    .groupBy("type")
+    .groupBy("type", "timestamp")
     .count()
 
 //        .filter("value isNotNull")
